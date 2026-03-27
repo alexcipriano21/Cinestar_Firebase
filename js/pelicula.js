@@ -1,10 +1,15 @@
-const getPelicula = async ()=>{
-    const id = (new URLSearchParams( window.location.search )).get('id')
-    const data = await fetch(`https://oaemdl.es/cinestar_sweb_php/peliculas/${id}`)
-    if ( data.status == 200 ) {
-        const pelicula = (await data.json())
-        let html = `
-            <br/><h1>Cartelera</h1><br/>
+import { db } from './firebaseConfig.js';
+import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+const getPelicula = async () => {
+	const id = new URLSearchParams(window.location.search).get('id');
+	const q = query(collection(db, "peliculas"), where("id", "==", id));
+	const querySnapshot = await getDocs(q);
+	if (querySnapshot.empty) return;
+
+	const pelicula = querySnapshot.docs[0].data();
+	let html = `
+            <br/><h1>${pelicula.idEstado === '1' ? 'Cartelera' : 'Próximos Estrenos'}</h1><br/>
 				<div class="contenido-pelicula">
 					<div class="datos-pelicula">
 						<h2>${pelicula.Titulo}</h2>
@@ -17,33 +22,29 @@ const getPelicula = async ()=>{
 							</div>
 							<div class="fila">
 								<div class="celda-titulo">Estreno :</div>
-								<div class="celda">${pelicula.FechaEstrenos}</div>
+								<div class="celda">${pelicula.FechaEstrenoss}</div>
 							</div>
 							<div class="fila">
 								<div class="celda-titulo">Género :</div>
-								<div class="celda">${pelicula.Generos}</div>
+								<div class="celda">${pelicula.Geneross}</div>
 							</div>
 							<div class="fila">
 								<div class="celda-titulo">Director :</div>
-								<div class="celda">${pelicula.Reparto}</div>
+								<div class="celda">${pelicula.Director}</div>
 							</div>
 							<div class="fila">
 								<div class="celda-titulo">Reparto :</div>
-								<div class="celda">Dwayne Johnson, Kevin Hart, Jack Black, Karen Gillan</div>
+								<div class="celda">${pelicula.Reparto}</div>
 							</div>
                         </div>
 					</div>
 					<img src="img/pelicula/${pelicula.id}.jpg" width="160" height="226"><br/><br/>
 				</div>
 				<div class="pelicula-video">
-					<embed src="https://www.youtube.com/v/${pelicula.Link}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="400">
+					<iframe src="https://www.youtube.com/embed/${pelicula.Link}" width="580" height="400"></iframe>
 				</div>
-
-        
         `
-        document.getElementById('contenido-interno').innerHTML = html
-    }
-
+	document.getElementById('contenido-interno').innerHTML = html
 }
 
 getPelicula()

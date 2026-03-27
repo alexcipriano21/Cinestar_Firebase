@@ -1,10 +1,13 @@
-const getCines = async() =>  {
-    const data = await fetch('https://oaemdl.es/cinestar_sweb_php/cines');
-    if ( data.status == 200 ) {
-        const cines = await data.json()
-        let html = '<br/><h1>Nuestros Cines</h1><br/>'
-        cines.data.forEach(cine => {
-            html += `
+import { db } from './firebaseConfig.js';
+import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+const getCines = async () => {
+    const q = query(collection(db, "cines"), orderBy("id"));
+    const querySnapshot = await getDocs(q);
+    let html = '<br/><h1>Nuestros Cines</h1><br/>'
+    querySnapshot.forEach(doc => {
+        const cine = doc.data();
+        html += `
 				<div class="contenido-cine">
 	        	    <img src="img/cine/${cine.id}.1.jpg" width="227" height="170"/>
             	   	<div class="datos-cine">
@@ -17,9 +20,7 @@ const getCines = async() =>  {
                 	</a>
 				</div>
             `
-        });
-        document.getElementById('contenido-interno').innerHTML = html
-    }
-    console.log( data );
+    });
+    document.getElementById('contenido-interno').innerHTML = html
 }
 getCines()

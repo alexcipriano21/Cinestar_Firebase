@@ -1,13 +1,43 @@
-ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input {
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+body,
+html,
+p,
+blockquote,
+fieldset,
+input {
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, pre, code { font-size: 1em; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code {
+    font-size: 1em;
+}
 
-a img, :link img, :visited img { border: none; }
+a img,
+:link img,
+:visited img {
+    border: none;
+}
 
-a:link, a:visited { }
+a:link,
+a:visited {}
 
 * {
     box-sizing: border-box;
@@ -21,7 +51,7 @@ body {
     font-family: "Century Gothic", Arial, Verdana;
 }
 
-header{
+header {
     width: 940px;
     height: 468px;
     margin: 0 auto;
@@ -82,7 +112,7 @@ p {
     margin-bottom: 0em;
     margin-top: 0.8em !important;
     color: #666666;
-     line-height: 15px;
+    line-height: 15px;
     text-decoration: none;
 }
 
@@ -170,7 +200,7 @@ ul.menu-principal li {
 ul.menu-principal li a:hover {
     color: #fff;
     box-shadow: inset 0px 0px 5px #999;
-    border-radius:  5px;
+    border-radius: 5px;
 }
 
 .slider {
@@ -178,7 +208,7 @@ ul.menu-principal li a:hover {
     height: 297px;
     margin: 0;
     float: left;
-    background-image: url(../img/varios/bg-slider.png); 
+    background-image: url(../img/varios/bg-slider.png);
     margin-left: 0px !important;
     padding-left: 1px;
     margin-top: -2px;
@@ -198,14 +228,14 @@ ul.menu-principal li a:hover {
     height: auto;
 }
 
-.publicidad {
+.banner-publicitario {
     width: 295px;
     height: auto;
     float: left;
     margin-left: 6px;
 }
 
-.publicidad a img {
+.banner-publicitario a img {
     width: 280px;
     height: 200px;
     margin: 0 0 10px 0;
@@ -243,15 +273,15 @@ ul.menu-principal li a:hover {
 /* ---------- verCines ----------*/
 
 .contenido-cine {
-    width:250px;
-    height:350px;
-    margin-top:10px;
-    margin-right:50px;
-    padding:10px;
-    float:left;  
-    display:inline;
-    background-color:#EEE;
-    border:1px solid #cccccc;
+    width: 250px;
+    height: 350px;
+    margin-top: 10px;
+    margin-right: 50px;
+    padding: 10px;
+    float: left;
+    display: inline;
+    background-color: #EEE;
+    border: 1px solid #cccccc;
 }
 
 .datos-cine {
@@ -355,7 +385,7 @@ ul.menu-principal li a:hover {
 }
 
 .cine-info .celda-titulo {
-    width : 80%;
+    width: 80%;
     font: 12px Arial, Helvetica, sans-serif;
     font-style: normal;
     color: #666;
@@ -373,37 +403,35 @@ ul.menu-principal li a:hover {
 }
 
 .cine-info p {
-	text-align: justify;
+    text-align: justify;
 }
 
 .aviso p {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 .cine-info img {
-    float : right;
+    float: right;
     margin: -265px 5px 0 0;
 }
 
 .cine-info .peliculas {
-	width: 600px;
+    width: 600px;
 }
 
 .celda-cabecera {
     display: inline-block;
-	width: 50%;
-	border: 0;
+    width: 50%;
+    border: 0;
     border-bottom: 1px;
     border-color: #FFFAB4;
     border-style: solid;
     color: #FFFFFF;
     background-color: #000;
     font-size: 11px;
-    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-right: -4px;
 }
 
-.celda-cabecera .pelicula {
-    
-}
+.celda-cabecera .pelicula {}
