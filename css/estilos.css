@@ -1,4 +1,4 @@
-ul,
+﻿ul,
 ol,
 li,
 h1,
@@ -46,7 +46,7 @@ a:visited {}
 }
 
 body {
-    background-image: url(../img/varios/bg-web.jpg);
+    background-image: url(https://ocuszvwpcxnljglkfari.supabase.co/storage/v1/object/public/cinestar-img/varios/bg-web.jpg);
     background-repeat: repeat-x;
     font-family: "Century Gothic", Arial, Verdana;
 }
@@ -61,7 +61,7 @@ footer {
     width: 100%;
     height: 67px;
     float: left;
-    background-image: url(../img/varios/bg-footer.jpg);
+    background-image: url(https://ocuszvwpcxnljglkfari.supabase.co/storage/v1/object/public/cinestar-img/varios/bg-footer.jpg);
     background-repeat: repeat-x;
     background-color: #ccc;
 }
@@ -70,7 +70,7 @@ footer .contenido-footer {
     margin: 0 auto;
     width: 940px;
     height: 67px;
-    background-image: url(../img/varios/bg-top-footer.jpg);
+    background-image: url(https://ocuszvwpcxnljglkfari.supabase.co/storage/v1/object/public/cinestar-img/varios/bg-top-footer.jpg);
     background-repeat: no-repeat;
     padding: 10px 0 0 350px;
 }
@@ -208,7 +208,7 @@ ul.menu-principal li a:hover {
     height: 297px;
     margin: 0;
     float: left;
-    background-image: url(../img/varios/bg-slider.png);
+    background-image: url(https://ocuszvwpcxnljglkfari.supabase.co/storage/v1/object/public/cinestar-img/varios/bg-slider.png);
     margin-left: 0px !important;
     padding-left: 1px;
     margin-top: -2px;
@@ -435,3 +435,4 @@ ul.menu-principal li a:hover {
 }
 
 .celda-cabecera .pelicula {}
+
